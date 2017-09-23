@@ -1,7 +1,7 @@
 {
   "name": "polyestr-tsx-lit-transform",
   "displayName": "Polyestr TSX/Lit Transform",
-  "version": "1.0.0-Alpha.1",
+  "version": "1.0.0-alpha.1",
   "description": "A TypeScript TSX-to-template-literal transform that builds into the eco-system of Polyestr.",
   "author": "Saleh A Motaal <saleh@grasppe.com>",
   "license": "MIT",

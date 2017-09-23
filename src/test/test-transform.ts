@@ -7,6 +7,7 @@ import * as highlight from 'highlight.js';
 import './devtools-formatter';
 
 const useOriginalText = false, useSourceText = true;
+const ciFlag = process.argv.indexOf('--ci') > -1;
 
 function test() {
     const scope: any = {};
@@ -186,9 +187,8 @@ function test() {
             return { input, output };
         });
 
-    log(scope, traces); // debugger;
-
-    if (!inBrowser) debugger;
+    if (inBrowser) log(scope, traces); // debugger;
+    else debugger;
 }
 
 var outputPath = absolutePath(__dirname, '../../test/generated');

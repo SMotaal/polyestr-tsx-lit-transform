@@ -18,7 +18,7 @@ export class MockTransformer<context extends TransformationContext = Transformat
     [SyntaxKind.SourceFile](node) {
         // [SyntaxKind.TaggedTemplateExpression](node) {
         // console.log({ taggedTemplateExpression: node });
-        console.log({ sourceFile: node });
+        // console.log({ sourceFile: node });
         return node;
     }
 

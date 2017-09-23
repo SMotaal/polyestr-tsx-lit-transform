@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.info(`Entry: polyestr-tsx-lit-transform/index`);
+// console.info(`Entry: polyestr-tsx-lit-transform/index`);
 var jsx_transformer_1 = require("./jsx-transformer"); // default,
 exports.JSXTransformer = jsx_transformer_1.JSXTransformer;
 exports.transformer = jsx_transformer_1.transform;

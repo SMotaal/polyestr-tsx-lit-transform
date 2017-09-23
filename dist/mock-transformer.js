@@ -17,7 +17,7 @@ class MockTransformer extends custom_transformer_1.default {
     [typescript_utils_1.SyntaxKind.SourceFile](node) {
         // [SyntaxKind.TaggedTemplateExpression](node) {
         // console.log({ taggedTemplateExpression: node });
-        console.log({ sourceFile: node });
+        // console.log({ sourceFile: node });
         return node;
     }
     [typescript_utils_1.SyntaxKind.TemplateSpan](node) {

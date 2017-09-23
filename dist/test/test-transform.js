@@ -8,6 +8,7 @@ const path_1 = require("path");
 const highlight = require("highlight.js");
 require("./devtools-formatter");
 const useOriginalText = false, useSourceText = true;
+const ciFlag = process.argv.indexOf('--ci') > -1;
 function test() {
     const scope = {};
     utils_1.trace('[Scope]', scope);
@@ -170,8 +171,9 @@ function test() {
                 return output;
             return { input, output };
         });
-    log(scope, utils_1.traces); // debugger;
-    if (!inBrowser)
+    if (inBrowser)
+        log(scope, utils_1.traces); // debugger;
+    else
         debugger;
 }
 var outputPath = path_1.resolve(__dirname, '../../test/generated');

@@ -1,13 +1,12 @@
 {
   "name": "polyestr-tsx-lit-transform",
   "displayName": "Polyestr TSX/Lit Transform",
-  "version": "1.0.0-Alpha.1",
+  "version": "0.0.0-develop",
   "description": "A TypeScript TSX-to-template-literal transform that builds into the eco-system of Polyestr.",
   "author": "Saleh A Motaal <saleh@grasppe.com>",
   "license": "MIT",
   "scripts": {
-    "build-verbose": "tsc --module commonjs --listFiles --pretty --extendedDiagnostics --forceConsistentCasingInFileNames --listEmittedFiles",
-    "build": "tsc --module commonjs",
+    "build": "true",
     "prepare": "npm run build",
     "test": "node test/index.js",
     "debug": "node debug.js",
@@ -35,5 +34,8 @@
   "optionalDependencies": {
     "ts-simple-ast": "^0.65.0",
     "iron-node": "^3.0.20"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

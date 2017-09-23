@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "name": "Launch File",
+            "program": "${workspaceRoot}/../../node_modules/ts-node/dist/_bin.js",
+            "args": [
+                "--ignoreWarnings",
+                "--disableWarnings",
+                "--no-cache",
+                "--fast",
+                "-P",
+                "${workspaceRoot}",
+                "${file}"
+            ],
+            // "showAsyncStacks": true,
+            // "smartStep": true,
+            // "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_CACHE_DIRECTORY": "${workspaceRoot}/.ts-node"
+            },
+            // "outFiles": [
+            //     "${workspaceRoot}/.ts-node/**"
+            // ],
+            "sourceMaps": true,
+            // OTHER STUFF
+            "skipFiles": [
+                // "${workspaceRoot}/node_modules/**/*.js",
+                // "${workspaceRoot}/../../node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ],
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}/../../node_modules/ts-node/dist/_bin.js",
+            "args": [
+                "--ignoreWarnings",
+                "--disableWarnings",
+                "--no-cache",
+                "--fast",
+                "-P",
+                "${workspaceRoot}",
+                "index.js"
+            ],
+            // "showAsyncStacks": true,
+            // "smartStep": true,
+            // "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_CACHE_DIRECTORY": "${workspaceRoot}/.ts-node"
+            },
+            // "outFiles": [
+            //     "${workspaceRoot}/.ts-node/**"
+            // ],
+            "sourceMaps": true,
+            // OTHER STUFF
+            "skipFiles": [
+                // "${workspaceRoot}/node_modules/**/*.js",
+                // "${workspaceRoot}/../../node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ],
+            "cwd": "${workspaceRoot}"
+        }
+    ]
+}

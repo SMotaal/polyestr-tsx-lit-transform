@@ -1,0 +1,39 @@
+{
+  "name": "polyestr-tsx-lit-transform",
+  "displayName": "Polyestr TSX/Lit Transform",
+  "version": "1.0.0-Alpha.1",
+  "description": "A TypeScript TSX-to-template-literal transform that builds into the eco-system of Polyestr.",
+  "author": "Saleh A Motaal <saleh@grasppe.com>",
+  "license": "MIT",
+  "scripts": {
+    "build-verbose": "tsc --module commonjs --listFiles --pretty --extendedDiagnostics --forceConsistentCasingInFileNames --listEmittedFiles",
+    "build": "tsc --module commonjs",
+    "prepare": "npm run build",
+    "test": "node test/index.js",
+    "debug": "node debug.js",
+    "ci": "npm run build && node debug.js --ci",
+    "start": "index.js"
+  },
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grasppe/polyestr-tsx-lit-transform.git"
+  },
+  "iron_node_package": true,
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/node": "^8.0.27",
+    "highlight.js": "^9.12.0",
+    "lit-html": "PolymerLabs/lit-html",
+    "polyestr-utils": "1.0.0-Alpha.1",
+    "typescript": "^2.5.2"
+  },
+  "devDependencies": {
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0"
+  },
+  "optionalDependencies": {
+    "ts-simple-ast": "^0.65.0",
+    "iron-node": "^3.0.20"
+  }
+}

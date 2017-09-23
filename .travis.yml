@@ -1,0 +1,25 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+notifications:
+  email: false
+node_js:
+- '8'
+before_script:
+- npm prune
+script:
+- npm run build
+- npm run test
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
+deploy:
+  provider: npm
+  email: saleh@grasppe.com
+  api_key:
+    secure: nad6WukXb8DksQ6UnGrnRgm4L/Khqkn3nTaWL+kCpbuQAGcVinkYJTzDhWU/QAVBCD5XdnYWb0a5QcI5XwgP2AU8gMeuNnGdyt0s6vYWPqJylNc5iT9zPBGZBbmESlZo6i9qv3FlC/ij1R7BHPwefhs6G5AgKhecUsLFl2pCm+UGUDzPED5rAUPI00MCiDgrUVGVda/MPMj2omKNX+j2f12C7SgjUW8HCDFDt/pmC1rwWiWkY/MUUhNBQIy2fHH0SuGWEj/B264R1K3dXt4o07ZdpairkDaTzD/tiL3S7WMueq/jQ5hnm+C/k9vJCNqJUX7ITK+kZ+/UpoM+MZAOFkluz1HLBHPBkPmlNmlrJB2MaYZamTT8psLmiXHW+O2ofm2ZtA6hbuGS1iMk7XpDW0kNdrEpi4sU4elhO7Y+d+iyVT64Nf5wp11DxgdTidtDikU0foMj5YO3/686f5H1BtVKUjOPHd7G98h9uvj0IwPyduQmOxCUnsVsdinbes9LwHthUOUpK2L9NezzqozNCBJwSPX4zYWbImVA3MURtJiAP2/qJpn4A1OWqu/WYp+NsI/q6/nLwZKKPfWvyCq0aTSKVqhXD2MjAltxDwaFjebXJTs18PN2RxDM7W1OZxNpGn+sN88c8o3gX7Sb4qREyUdKB9omETPw/dJWoSM3okU=
+  on:
+    tags: true
+    repo: grasppe/polyestr-tsx-lit-transform
+    branch: master

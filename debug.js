@@ -1,13 +1,14 @@
-#!/usr/bin/env node --
+#!/usr/bin / env node --
 
 const entry = './test/index';
+const bootstrapper = 'iron-node/bin/run';
+const tryThis = (ƒ, fallback) => { try { return ƒ(); } catch (exception) { return typeof fallback === 'function' ? fallback(exception) : typeof fallback === 'object' ? (fallback.exception = exception) : fallback; }; };
 const { argv } = process;
 
 if (argv.indexOf('--ci') > -1) {
     require('./test/ci');
-} else {
-    const tryThis = (ƒ, catcher) => { try { return ƒ(); } catch (exception) { return typeof catcher === 'function' ? catcher(exception) : typeof catcher === 'object' ? (catcher.exception = exception) : catcher; }; };
-    const runtime = tryThis(() => require.resolve('iron-node/bin/run'), null);
+} else if (entry) {
+    const runtime = tryThis(() => bootstrapper && require.resolve(bootstrapper), null);
     const canBootstrap = runtime && !(require.cache[require] && require.cache[require].loaded);
 
     if (!canBootstrap)

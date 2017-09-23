@@ -6,7 +6,7 @@ if (require.main === module) {
     require('./debug');
 } else {
     try {
-        module.exports = require(entry);
+        module.exports = entry ? require(entry) : {};
     } catch (exception) {
         try {
             if (!require('fs').existsSync(require('path').resolve(__dirname, entry)))

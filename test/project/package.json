@@ -1,0 +1,8 @@
+{
+    "name": "project",
+    "version": "0.0.0-test",
+    "private": true,
+    "dependencies": {
+        "polyestr-tsx-lit-transform": "file:../../"
+    }
+}

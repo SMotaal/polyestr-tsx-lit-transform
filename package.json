@@ -1,24 +1,27 @@
 {
   "name": "polyestr-tsx-lit-transform",
   "displayName": "Polyestr TSX/Lit Transform",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "A TypeScript TSX-to-template-literal transform that builds into the eco-system of Polyestr.",
   "author": "Saleh A Motaal <saleh@grasppe.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run -s build",
+    "prepare": "npm run -s build-lit-html;",
+    "prepack": "npm run -s build && npm run -s ci",
+    "postinstall": "node postinstall.js",
     "clean-dist": "([[ ! -d ./dist ]] ||  rm -rf ./dist) && echo '\n  √ Removed Build Folder\n' && true;",
     "clean-test-project": "([[ ! -d ./test/project/dist ]] || rm -rf ./test/project/dist) && echo '\n  √ Removed Test-Generated Folder\n' && true;",
     "clean-test": "([[ ! -d ./test/generated ]] || rm -rf ./test/generated) && echo '\n  √ Removed Test-Build Folder\n' && true;",
     "clean-all": "npm run clean-dist && npm run clean-test && npm run clean-test-project",
     "build-verbose": "npm run build -- --listFiles --pretty --extendedDiagnostics --forceConsistentCasingInFileNames --listEmittedFiles",
+    "build-lit-html": "([[ -d ./node_modules/lit-html ]] && ([[ -d ./node_modules/lit-html/dist ]] || (cd ./node_modules/lit-html; npm install; npm run build; cd ../..))) || true",
     "build": "tsc --module commonjs",
     "pretest": "npm run -s clean-test",
     "test": "node test/index.js",
     "build-test-project": "npm run clean-test-project && npm run build-test-project-only",
-    "build-test-project-only": "cd ./test/project && (node compile.js; cd ../..)",
+    "build-test-project-only": "cd ./test/project && (npm install; node compile.js; cd ../..)",
     "debug": "node debug.js",
-    "preci": "npm run -s clean-all",
+    "preci": "npm run -s build-lit-html; npm run -s clean-all",
     "ci": "npm run -s build && npm run -s build-test-project-only && node debug.js --ci",
     "start": "index.js"
   },
@@ -33,16 +36,17 @@
     "@types/node": "^8.0.27",
     "highlight.js": "^9.12.0",
     "lit-html": "PolymerLabs/lit-html",
-    "polyestr-utils": "1.0.0-Alpha.1",
+    "polyestr-utils": "^1.0.0-alpha.3",
     "typescript": "^2.5.2"
   },
   "devDependencies": {
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0"
   },
-  "optionalDependencies": {
-    "ts-simple-ast": "^0.65.0",
-    "iron-node": "^3.0.20"
+  "optionalDependencies": {},
+  "ignoredDependencies": {
+    "iron-node": "^3.0.20",
+    "ts-simple-ast": "^0.65.0"
   },
   "publishConfig": {
     "access": "public"

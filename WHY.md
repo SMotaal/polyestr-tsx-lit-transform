@@ -1,4 +1,4 @@
-![Polyestr TSX/Lit Transform Icon](./src/assets/polyestr-tsx-lit-transform.svg)
+![Polyestr TSX/Lit Transform Icon](https://cdn.rawgit.com/grasppe/polyestr-tsx-lit-transform/master/src/assets/logo.svg)
 
 # Polyestr TSX/Lit Transform
 

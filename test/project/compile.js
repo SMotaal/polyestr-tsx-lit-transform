@@ -8,11 +8,11 @@ compile();
 function compile() {
     const ts = require('typescript');
 
-    const [srcPath, dstPath, configPath] = ['./src/index.tsx', './src/index.ts', './tsconfig.json'].map(require.resolve);
+    const [srcPath, configPath] = ['./src/index.tsx', './tsconfig.json'].map(require.resolve);
+    const dstPath = srcPath.slice(0, -1);
 
     const config = require(configPath);
     const { compilerOptions } = config;
-
 
     console.log(`*** COMPILE.JS ***`)
     log('FILES', { src: srcPath, dst: dstPath, cfg: configPath }, null);
@@ -30,6 +30,7 @@ function compile() {
 function transform(src, dst) {
     const { transform, writeFile } = require('polyestr-tsx-lit-transform');
     const result = transform(src);
+    console.log(`Writing: ${dst}`);
     writeFile(result, dst);
     return result;
 }

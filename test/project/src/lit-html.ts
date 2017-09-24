@@ -1,1 +1,0 @@
-../../../src/lit-html.ts

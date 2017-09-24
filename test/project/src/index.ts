@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { html, render, svg, TemplateResult } from "./lit-html";
+import { html, render, svg, TemplateResult } from "./lit-html-adapter";
 /**
  * Adapted from the Ractive.js clock example: http://www.ractivejs.org/examples/clock/
  */

@@ -9,8 +9,7 @@ node_js:
 before_script:
 - npm prune
 script:
-- npm run build
-- npm run test
+- npm run ci
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"
